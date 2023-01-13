@@ -1,0 +1,5 @@
+# IP Address
+[ip-address]
+interval=3600
+color=#d1c182
+min_width=130

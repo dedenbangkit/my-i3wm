@@ -120,5 +120,5 @@ regolith.lockscreen.wallpaper.color.shading.type:
 
 regolith.look.loader: /home/dedenbangkit/.config/regolith2/deden-themes/default_loader.sh
 
-i3xrocks.date.format2: + | %A | %d %b %y %I:%M
+i3xrocks.date.format2: %A %d %b %y %I:%M
 Xft.dpi: 92

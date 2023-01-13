@@ -1,0 +1,5 @@
+# Memory
+[memory]
+interval=10
+min_width=80
+label_color=#d1c182

@@ -1,0 +1,6 @@
+# Rofication
+#
+# Displays notification count
+[rofication]
+interval=10
+label_color=#c92c2c
