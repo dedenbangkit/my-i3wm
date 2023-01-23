@@ -1,5 +1,5 @@
 # my-i3wm
-Regolith 2 i3wm and Gnome Terminal theme
+i3wm and theme
 
 # i3wm Bars
 ![alt text](https://github.com/dedenbangkit/my-i3wm/blob/main/screenshots/bars.png?raw=true)
