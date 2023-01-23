@@ -8,6 +8,7 @@ if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     RESOURCE_GETTER="trawlcat"
 fi
 
+# Load everything
 load_look() {
     # Set GNOME interface options from Xresources values if specifed by Xresources
     GTK_THEME=$($RESOURCE_GETTER gtk.theme_name || :)
