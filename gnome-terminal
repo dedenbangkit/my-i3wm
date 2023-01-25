@@ -1,4 +1,5 @@
 gnome.terminal.font:      gtk_monospace_font_name
+!gnome.terminal.font:      JetBrains Mono 10
 gnome.terminal.scrollbar: never
 
 gnome.terminal.color0:    color_dark_5

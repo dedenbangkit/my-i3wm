@@ -31,10 +31,11 @@
 #define typeface_bar_glyph_wifi 
 #define typeface_bar_glyph_wired 
 #define typeface_bar_glyph_workspace 
+#define i3xrocks_monospace JetBrains Mono NL 11
 
 i3xrocks.label.color:       color_light_2
 i3xrocks.value.color:       color_dark_1
-i3xrocks.value.font:        gtk_monospace_font_name
+i3xrocks.value.font:        i3xrocks_monospace
 i3xrocks.critical.color:    color_red
 i3xrocks.error.color:       color_orange
 i3xrocks.warning:           color_yellow

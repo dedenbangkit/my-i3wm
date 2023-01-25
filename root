@@ -21,9 +21,9 @@ gtk.icon_theme_name: hicolor
 ! -- Fonts
 ! --------------------------------------------
 
-#define gtk_font_name JetBrains Mono NL 11
-#define gtk_document_font_name JetBrains Mono NL 11
-#define gtk_monospace_font_name JetBrains Mono NL 11
+#define gtk_font_name JetBrains Mono NL 10
+#define gtk_document_font_name JetBrains Mono NL 10
+#define gtk_monospace_font_name JetBrains Mono NL 10
 
 gtk.font_name: gtk_font_name
 gtk.document_font_name: gtk_document_font_name
