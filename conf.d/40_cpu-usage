@@ -4,5 +4,5 @@
 # see the script for details.
 [cpu-usage]
 interval=5
-min_width=80
+min_width=60
 label_color=#db0469

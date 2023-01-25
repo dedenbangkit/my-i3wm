@@ -59,14 +59,14 @@ def escape(name):
         name = '<span color = "#5D3FD3"><b>Z</b></span> ' + name
     elif "dedenbangkit@linux" in name:
         name = name.replace("dedenbangkit@linux", "")
-        name = '<span color = "#8a71a3"></span> ' + name
+        name = '<span font_desc = "JetBrainsMono Nerd Font 12" color = "#9ca3ad"></span> ' + name
     elif "vim" in name:
         name = '<span color = "#00FF00"></span> ' + name.capitalize()
     elif "emacs" in name.lower():
         name = name.replace("emacs", "Emacs")
         name = '<span color = "#ab64c4"></span> ' + name
     elif "Firefox" in name:
-        name = '<span color = "#FFA500"></span> Firefox'
+        name = '<span color = "#FFA500"></span>  Firefox'
     elif "Chrome" in name:
         name = '<span color = "#89CFF0"></span> Chrome'
     else:
@@ -75,7 +75,7 @@ def escape(name):
 
 
 def value_span(value):
-    return f'<span font_desc="{value_font}" color = "{value_color}" > {value} </span>'
+    return f'<span font_desc = "{value_font}" color = "{value_color}" > {value} </span>'
 
 
 parser = argparse.ArgumentParser(
@@ -107,10 +107,11 @@ label_color, err = subprocess.Popen(
 ).communicate()
 label_color = label_color.decode("utf-8")
 value_font, err = subprocess.Popen(
-    ["xrescat", "i3xrocks.value.font", "sans"],
+    ["xrescat", "i3xrocks.value.font", "JetBrainsMono Nerd Font 11"],
     stdout=subprocess.PIPE,
 ).communicate()
 value_font = value_font.decode("utf-8")
+# value_font = "JetBrainsMono Nerd Font 12"
 
 
 if filter_list_env is None and args.filter_list is None:
@@ -142,6 +143,6 @@ if instance is None:
     sys.exit()
 
 if len(filter_list) == 0 or instance in filter_list:
-    print(escape(name))
-    # print(value_span(escape(name)))
+    # print(escape(name))
+    print(value_span(escape(name)))
     # print(value_span(escape(name[:short_length])))

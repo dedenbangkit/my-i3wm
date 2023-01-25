@@ -3,5 +3,5 @@
 # Display Volume
 [volume]
 interval=5
-min_width=60
+min_width=65
 align=center

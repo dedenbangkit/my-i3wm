@@ -5,6 +5,6 @@
 # instance=BAT0
 [battery]
 interval=10
-min_width=80
+min_width=45
 align=center
 label_color=#38ab03

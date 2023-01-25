@@ -79,7 +79,7 @@ lspan() {
 # get font specifics from xresource file
 VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
 LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
-VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrainsMono Nerd Font 11")}
 
 # output net usage using pango markup
 if [ "$RT" = "up" ]; then
@@ -89,5 +89,5 @@ elif [ "$RT" = "down" ] || [ "$RT" = "dn" ]; then
 elif [ "$RT" = "total" ]; then
   echo "$(lspan "${NIC}")$(fspan "$AX")"
 else
-  echo "$(lspan "${NIC}")$(fspan "$RX")$(lspan "${DN}")$(fspan "$TX")$(lspan "${UP}")"
+  echo "$(lspan "${NIC}")$(fspan "$RX")$(lspan " ${DN}")$(fspan "$TX")$(lspan " ${UP}")"
 fi
