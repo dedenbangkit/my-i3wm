@@ -4,4 +4,5 @@ interval=1
 # Uncomment to show only for these window instances
 # filter_list=evince libreoffice
 short_length=10
-color=#d1c182
+color=#c92c2c
+label_color=#c92c2c

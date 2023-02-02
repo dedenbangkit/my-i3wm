@@ -31,7 +31,7 @@
 #define typeface_bar_glyph_wifi 
 #define typeface_bar_glyph_wired 
 #define typeface_bar_glyph_workspace 
-#define i3xrocks_monospace JetBrainsMono Nerd Font 11
+#define i3xrocks_monospace JetBrainsMono Nerd Font Bold 10
 
 i3xrocks.label.color:       color_light_2
 i3xrocks.value.color:       color_dark_1

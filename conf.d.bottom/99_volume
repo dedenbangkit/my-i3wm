@@ -5,3 +5,5 @@
 interval=5
 min_width=65
 align=center
+label_color=#d1c182
+value_color=#c92c2c

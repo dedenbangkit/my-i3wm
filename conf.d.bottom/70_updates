@@ -1,3 +1,4 @@
 # Package Updates
 [updates]
 interval=xresource:i3xrocks.updates.interval 3600
+label_color=#d1c182
