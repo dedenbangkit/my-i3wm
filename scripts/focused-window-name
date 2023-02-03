@@ -35,12 +35,16 @@ def escape(name):
     name = name.replace("<", "&lt;")
     name = name.replace(">", "&gt;")
     name = name.replace('"', "&quot;")
-    if "repos" in name.lower() or "akvo" in name.lower():
-        name = name + ' <span color = "#e3e8e4"> <span color ="#FFF" >Git</span></span>'
     if "sudo" in name.lower():
-        name = name.replace("sudo", '<span color = "#c46464">SUDO</span>')
+        name = name.replace("sudo", '<span color = "#c46464" font_desc = "{value_font}">SUDO</span>')
     if "dok" in name.split(" ") or "dok" == name:
         name = '<span color = "#1f93ff"></span> ' + name
+    elif "YouTube" in name and "firefox" in name.lower():
+        name = '<span color = "#FF0000"></span>  YouTube'
+    elif "firefox" in name.lower().split(" "):
+        name = '<span color = "#FFA500"></span>  Firefox'
+    elif "Chrome" in name:
+        name = '<span color = "#89CFF0"></span> Chrome'
     elif "python" in name.lower():
         name = '<span color = "#f2ef22"></span> ' + name
     elif "node" in name.lower():
@@ -57,26 +61,28 @@ def escape(name):
         name = '<span color = "#408de6"></span> ' + name
     elif "zulip" in name.lower():
         name = '<span color = "#5D3FD3"><b>Z</b></span> ' + name
+    elif "calendar" == name.lower():
+        name = '<span color = "#ff6969"><b></b></span>  ' + name
     elif "dedenbangkit@linux" in name:
         name = name.replace("dedenbangkit@linux", "")
-        name = '<span font_desc = "JetBrainsMono Nerd Font 12" color = "#9ca3ad"></span> ' + name
+        if "repos" in name.lower() or "akvo" in name.lower():
+            name = name.replace(":~/Repos/akvorepos/", "")
+            name = name.split("/")[0]
+            name = '<span color = "#FFA500"></span> ' + name
+        else:
+            name = '<span font_desc = "JetBrainsMono Nerd Font 12" color = "#9ca3ad"></span> ' + name
     elif "vim" in name:
         name = '<span color = "#00FF00"></span> ' + name.capitalize()
     elif "emacs" in name.lower():
         name = name.replace("emacs", "Emacs")
-        name = '<span color = "#ab64c4"></span> ' + name
-    elif "Firefox" in name:
-        name = '<span color = "#FFA500"></span>  Firefox'
-    elif "Chrome" in name:
-        name = '<span color = "#89CFF0"></span> Chrome'
+        name = '<span color = "#ab64c4" font_desc = "JetBrainsMono Nerd Font 12"></span> ' + name
     else:
         name = '<span color = "#fff81f"></span> ~ ' + name
     return name
 
 
 def value_span(value):
-    return f'<span font_desc = "{value_font}" color = "{value_color}" > {value} </span>'
-
+    return f'<span font_desc = "{value_font}" color = "{value_color}" background = "{bg_color}" > {value} </span>'
 
 parser = argparse.ArgumentParser(
     description="Returns the title of the currently focused window"
@@ -99,13 +105,17 @@ filter_list_env = os.environ.get("filter_list")
 short_length_env = os.environ.get("short_length")
 
 value_color, err = subprocess.Popen(
-    ["xrescat", "i3xrocks.color", "#D8DEE9"], stdout=subprocess.PIPE
+    ["xrescat", "i3xrocks.value.color", "#9A9996"], stdout=subprocess.PIPE
 ).communicate()
 value_color = value_color.decode("utf-8")
 label_color, err = subprocess.Popen(
     ["xrescat", "i3xrocks.color", "#7B8394"], stdout=subprocess.PIPE
 ).communicate()
 label_color = label_color.decode("utf-8")
+bg_color, err = subprocess.Popen(
+    ["xrescat", "i3xrocks.value.bg_color", "#2b2b2b"], stdout=subprocess.PIPE
+).communicate()
+bg_color = bg_color.decode("utf-8")
 value_font, err = subprocess.Popen(
     ["xrescat", "i3xrocks.value.font", "JetBrainsMono Nerd Font 11"],
     stdout=subprocess.PIPE,

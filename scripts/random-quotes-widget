@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -Eeu -o pipefail
+
+BUTTON="${button:-}"
+export LABEL BUTTON
+
+QUOTES=$(/home/dedenbangkit/Scripts/quotes)
+LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
+VALUE_BG_COLOR=${bg_color:-$(xrescat i3xrocks.value.bg_color "#3b3b3b")}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\"><span color=\"${LABEL_COLOR}\" background=\"#998d5c\" >  </span> $QUOTES </span> "
+
+if [ "x${BUTTON}" == "x1" ]; then
+    QUOTES=$(/home/dedenbangkit/Scripts/quotes)
+    echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\"><span color=\"${LABEL_COLOR}\" background=\"#998d5c\" >  </span> $QUOTES </span> "
+fi

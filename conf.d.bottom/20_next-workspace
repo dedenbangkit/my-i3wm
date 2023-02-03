@@ -1,6 +1,0 @@
-# next workspace
-#
-# Open next available workspace
-[next-workspace-widget]
-interval=once
-min_width=10

@@ -5,3 +5,6 @@
 ## Navigate // Move Entire Workspace // <><Shift> < > ##/
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
+
+## Navigate // Open Calendar // <> c ##/
+bindsym $mod+c exec --no-startup-id /usr/bin/gnome-calendar

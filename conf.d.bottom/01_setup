@@ -28,4 +28,4 @@ min_width=40
 markup=pango
 color=xresource:i3xrocks.value.color
 label_color=xresource:i3xrocks.label.color
-align=center
+align=right

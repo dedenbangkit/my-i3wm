@@ -1,5 +1,5 @@
-gnome.terminal.font:      gtk_monospace_font_name
-!gnome.terminal.font:      JetBrains Mono 10
+!gnome.terminal.font:     gtk_monospace_font_name
+gnome.terminal.font:      JetBrains Mono NL 10
 gnome.terminal.scrollbar: never
 
 gnome.terminal.color0:    color_dark_5
@@ -21,5 +21,5 @@ gnome.terminal.color15:   color_light_1
 
 ! -- Optional Configuration
 !gnome.terminal.audible-bell:                       true/false
-!gnome.terminal.use-transparent-background:         true/false
-!gnome.terminal.background-transparency-percent:    0 - 99
+gnome.terminal.use-transparent-background:          true
+gnome.terminal.background-transparency-percent:     5
