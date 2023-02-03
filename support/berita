@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Deploy dedenbangkit/api-berita-indonesia to port:3002
+# Using pm2 or docker, nginx whatever
+
+set -euo pipefail
+
+topic=$(curl -s --connect-timeout 2 localhost:3002 \
+	| jq \
+	| grep '\"path\"' \
+	| shuf -n 1 \
+	| cut -d ':' -f2 \
+	| sed 's/\"//g' \
+	| sed  's/\ //g')
+
+title=$(echo $topic \
+	| sed '0,/\//s///' \
+	| sed 's/\//\ -\ /g' \
+	| tr [:lower:] [:upper:]
+)
+
+curl --connect-timeout 2 -s "localhost:3002${topic}" \
+	| jq \
+	| grep '\"description\"' \
+	| shuf -n 1 \
+	| cut -d ':' -f2 \
+	| sed 's/\&nbsp;/ /g' \
+	| sed 's/\&amp;/\&/g' \
+	| sed 's/\&quot;/\\/g' \
+	| cut -d '\' -f1 \
+	| sed 's/\"//g' \
+	| sed 's/.,/./g' \
+	| sed 's/\.\.\.\././g' \
+	| cut -c2- \
+	| awk -v prefix="${title}" '{print prefix $0}'

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+quotes_file='./source/quotes.json'
+
+jq --arg i $(($RANDOM % $(jq length "${quotes_file}"))) '.[$i|tonumber]' "${quotes_file}" \
+	| sed 's/"//g'
