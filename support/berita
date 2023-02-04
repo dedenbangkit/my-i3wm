@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Deploy dedenbangkit/api-berita-indonesia to port:3002
-# Using pm2 or docker, nginx whatever
-
 set -euo pipefail
 
 topic=$(curl -s --connect-timeout 2 localhost:3002 \
@@ -15,9 +12,66 @@ topic=$(curl -s --connect-timeout 2 localhost:3002 \
 
 title=$(echo $topic \
 	| sed '0,/\//s///' \
-	| sed 's/\//\ -\ /g' \
+	| sed 's/\//\|/g' \
+	| cut -d '|' -f1 \
 	| tr [:lower:] [:upper:]
 )
+
+bg="#888"
+clr="#888"
+logo=
+if [[ $title = "ANTARA" ]];then
+	bg="#f2f2f2"
+	clr="#a50a2e"
+	logo=
+elif [[ $title = "CNBC" ]];then
+	bg="#f2f2f2"
+	clr="#323031"
+	logo=
+elif [[ $title = "CNN" ]];then
+	bg="#c60000"
+	clr="#d6d6d6"
+	logo=
+elif [[ $title = "JPNN" ]];then
+	bg="#d6d6d6"
+	clr="#d32115"
+	logo=
+elif [[ $title = "KUMPARAN" ]];then
+	bg="#d6d6d6"
+	clr="#019cab"
+	logo=
+elif [[ $title = "MERDEKA" ]];then
+	bg="#d6d6d6"
+	clr="#0f76b6"
+	logo=
+elif [[ $title = "OKEZONE" ]];then
+	bg="#e1e4ea"
+	clr="#d6463a"
+	logo=
+elif [[ $title = "REPUBLIKA" ]];then
+	bg="#d6d6d6"
+	clr="#1f1f1f"
+	logo=
+elif [[ $title = "SINDONEWS" ]];then
+	bg="#d6d6d6"
+	clr="#00488a"
+	logo=
+elif [[ $title = "SUARA" ]];then
+	bg="#d6d6d6"
+	clr="#e87538"
+	logo=
+elif [[ $title = "TEMPO" ]];then
+	bg="#d6d6d6"
+	clr="#f70000"
+	logo=
+elif [[ $title = "TRIBUN" ]];then
+	bg="#d6d6d6"
+	clr="#2c6a9f"
+	logo=
+else
+	bg="#888"
+	clr="#888"
+fi
 
 curl --connect-timeout 2 -s "localhost:3002${topic}" \
 	| jq \
@@ -32,4 +86,5 @@ curl --connect-timeout 2 -s "localhost:3002${topic}" \
 	| sed 's/.,/./g' \
 	| sed 's/\.\.\.\././g' \
 	| cut -c2- \
-	| awk -v prefix="${title}" '{print prefix $0}'
+	| awk 'NF=10' \
+	| awk -v prefix="${title}" -v bg="${bg}" -v clr="${clr}" -v logo=${logo} '{print "<span font_desc=\"JetBrainsMono Nerd Font 10\"background=\""bg"\" color=\""clr"\"> "logo" "prefix" </span> " $0"..."}'

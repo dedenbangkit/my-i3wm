@@ -5,16 +5,24 @@ set -Eeu -o pipefail
 BUTTON="${button:-}"
 export LABEL BUTTON
 
-NEWS=$(/home/dedenbangkit/Scripts/berita)
-LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
-VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
-VALUE_BG_COLOR=${bg_color:-$(xrescat i3xrocks.value.bg_color "#3b3b3b")}
-VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrains Mono 10")}
-echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\"><span color=\"${LABEL_COLOR}\" background=\"#998d5c\" >   </span> $NEWS</span> "
+function generate_news() {
+    NEWS=$(/home/dedenbangkit/Scripts/berita)
+    LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+    VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}
+    VALUE_BG_COLOR=${bg_color:-$(xrescat i3xrocks.value.bg_color "#3b3b3b")}
+    VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "JetBrains Mono 10")}
+    echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\">$NEWS</span> "
+    echo $NEWS > /tmp/news.tmp
+    echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\">$NEWS</span> " > /tmp/news.html.tmp
+}
+
+if [ "${BUTTON}" == "" ]; then
+    generate_news
+fi
 
 if [ "x${BUTTON}" == "x1" ]; then
-    ACTION=$(xrescat i3xrocks.action.berita "firefox --search \"$NEWS\"")
+    KWD=$(cat /tmp/news.tmp | cut -d '/' -f2 | sed 's/.*> //' | cut -d '.' -f1) 
+    ACTION=$(xrescat i3xrocks.action.berita "firefox --search \"${KWD}\"")
     /usr/bin/i3-msg -q "exec --no-startup-id $ACTION"
-    NEWS=$(/home/dedenbangkit/Scripts/berita)
-    echo "<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\" background=\"${VALUE_BG_COLOR}\"><span color=\"${LABEL_COLOR}\" background=\"#998d5c\" >   </span> $NEWS</span> "
+    generate_news
 fi
