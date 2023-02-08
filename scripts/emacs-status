@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -Eeu -o pipefail
+
+BUTTON="${button:-}"
+export LABEL BUTTON
+
+
+function emacs_status() {
+    LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+    VALUE_COLOR="#2b2b2b"
+    TEXT_COLOR="#888888"
+    TEXT="Daemon"
+    if ps -e -o args | grep -i 'emacs' | grep -q 'daemon'; then
+        VALUE_COLOR="#ab64c4"
+        TEXT_COLOR="#DCDDDE"
+        TEXT="Daemon"
+    fi
+    VALUE_FONT="JetBrainsMono Nerd Font Bold 10"
+    echo " <span font_desc=\"${VALUE_FONT}\" color=\"${TEXT_COLOR}\" background=\"${VALUE_COLOR}\">  ${TEXT} </span>"
+}
+
+if [ "${BUTTON}" == "" ]; then
+   emacs_status
+fi
+
+if [ "x${BUTTON}" == "x1" ]; then
+    if ps -e -o args | grep -i 'emacs' | grep -q 'daemon'; then
+       ACTION=$(xrescat i3xrocks.action.checkemacs "/snap/bin/emacsclient -c")
+       /usr/bin/i3-msg -q "exec --no-startup-id $ACTION"
+    else
+       ACTION=$(xrescat i3xrocks.action.checkemacs "/snap/bin/emacs --daemon")
+       /usr/bin/i3-msg -q "exec --no-startup-id $ACTION"
+    fi
+    emacs_status
+fi

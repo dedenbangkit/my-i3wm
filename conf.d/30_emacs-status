@@ -1,0 +1,7 @@
+# next workspace
+#
+# Open next available workspace
+[emacs-status]
+interval=1
+font=JetBrains Mono Nerd Font 10
+bg_color=#1f1e1e

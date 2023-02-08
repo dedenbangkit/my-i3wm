@@ -8,3 +8,6 @@ bindsym $mod+Shift+less move workspace to output left
 
 ## Navigate // Open Calendar // <> c ##/
 bindsym $mod+c exec --no-startup-id /usr/bin/gnome-calendar
+
+## Navigate // Open Emacs // <>x ##/
+bindsym $mod+x exec --no-startup-id /snap/bin/emacsclient -c
