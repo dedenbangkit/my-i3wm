@@ -13,6 +13,8 @@ set_from_resource $i3-wm.bar.workspace_min_width i3-wm.bar.workspace_min_width 3
 # i3xrocks config file. Override this for a custom status bar generator.
 set_from_resource $i3-wm.bar.status_command i3-wm.bar.status_command i3xrocks -u ~/.config/regolith2/i3xrocks/conf.d.bottom
 
+# Test
+
 # The bar configuration
 bar {
   position bottom
@@ -21,18 +23,20 @@ bar {
   separator_symbol $i3-wm.bar.separatorchar
   status_command $i3-wm.bar.status_command
   tray_output $i3-wm.bar.trayoutput
-  strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+  # strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+  strip_workspace_numbers yes
   workspace_min_width 0
+	workspace_buttons no
 
   colors {
       background $i3-wm.bar.background.color
       statusline $i3-wm.bar.statusline.color
       separator  $i3-wm.bar.separator.color
 
-#                        BORDER  BACKGROUND TEXT
-      focused_workspace  $i3-wm.bar.background.color      $i3-wm.bar.background.color   $i3-wm.bar.background.color
-      active_workspace $i3-wm.bar.background.color      $i3-wm.bar.background.color   $i3-wm.bar.background.color
-      inactive_workspace $i3-wm.bar.background.color      $i3-wm.bar.background.color   $i3-wm.bar.background.color
-      urgent_workspace $i3-wm.bar.background.color      $i3-wm.bar.background.color   $i3-wm.bar.background.color
+			# BORDER  BACKGROUND TEXT
+      # focused_workspace $i3-wm.bar.background.color $i3-wm.bar.background.color $i3-wm.bar.background.color
+      # active_workspace $i3-wm.bar.background.color $i3-wm.bar.background.color $i3-wm.bar.background.color
+      # inactive_workspace $i3-wm.bar.background.color $i3-wm.bar.background.color $i3-wm.bar.background.color
+      # urgent_workspace $i3-wm.bar.background.color $i3-wm.bar.background.color $i3-wm.bar.background.color
   }
 }
