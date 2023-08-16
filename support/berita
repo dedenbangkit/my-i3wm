@@ -73,18 +73,11 @@ else
 	clr="#888"
 fi
 
-curl --connect-timeout 2 -s "localhost:3002${topic}" \
-	| jq \
-	| grep '\"description\"' \
-	| shuf -n 1 \
-	| cut -d ':' -f2 \
-	| sed 's/\&nbsp;/ /g' \
-	| sed 's/\&amp;/\&/g' \
-	| sed 's/\&quot;/\\/g' \
-	| cut -d '\' -f1 \
-	| sed 's/\"//g' \
-	| sed 's/.,/./g' \
-	| sed 's/\.\.\.\././g' \
-	| cut -c2- \
-	| awk 'NF=10' \
-	| awk -v prefix="${title}" -v bg="${bg}" -v clr="${clr}" -v logo=${logo} '{print "<span font_desc=\"JetBrainsMono Nerd Font 10\"background=\""bg"\" color=\""clr"\"> "logo" "prefix" </span> " $0"..."}'
+news=$(curl --connect-timeout 2 -s "localhost:3002${topic}" | jq '.data.posts[0]')
+link=$(echo "$news" | jq '.link' | sed 's/\"//g')
+echo "$link" > ~/.cache/berita_link
+description=$(echo "$news" | jq '.description' | sed 's/\"//g')
+
+echo "$description" \
+	| awk 'NF=15' \
+	| awk -v prefix="${title}" -v bg="${bg}" -v clr="${clr}" -v logo=${logo} '{print "<span font_desc=\"JetBrainsMono Nerd Font 10\"background=\""bg"\" color=\""clr"\"> "logo" "prefix" </span> "$0"..."}'
