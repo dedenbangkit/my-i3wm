@@ -14,16 +14,16 @@ regolith.look: default
 ! -- Theme elements
 ! --------------------------------------------
 
-gtk.theme_name: Adwaita-dark
-gtk.icon_theme_name: hicolor
+gtk.theme_name: Yaru-bark-dark
+gtk.icon_theme_name: Yaru
 
 ! --------------------------------------------
 ! -- Fonts
 ! --------------------------------------------
 
-#define gtk_font_name JetBrains Mono NL 10
-#define gtk_document_font_name JetBrains Mono NL 10
-#define gtk_monospace_font_name JetBrains Mono NL 10
+#define gtk_font_name JetBrainsMono Nerd Font 10
+#define gtk_document_font_name JetBrainsMono Nerd Font 10
+#define gtk_monospace_font_name JetBrainsMono Nerd Font 10
 
 gtk.font_name: gtk_font_name
 gtk.document_font_name: gtk_document_font_name
@@ -42,6 +42,8 @@ gtk.monospace_font_name: gtk_monospace_font_name
 #define color_dark_3   #393939
 #define color_dark_2   #9A9996
 #define color_dark_1   #B8B8B8
+
+#define color_yellow_green #d7ff7a
 
 ! -- Light gradients
 #define color_light_4   #C0BFBC

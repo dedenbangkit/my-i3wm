@@ -1,0 +1,32 @@
+[screenshot]
+full_text=<span foreground="yellow" size="x-large"></span>
+min_width=34
+command=/usr/bin/gnome-screenshot -i >/dev/null
+border=#665934
+border_top=0
+border_left=1
+border_right=0
+border_bottom=0
+align=center
+
+[recorder]
+full_text=<span foreground="red" size="x-large"></span>
+min_width=34
+command=/usr/bin/obs >/dev/null
+border=#665934
+border_top=0
+border_left=1
+border_right=1
+border_bottom=0
+align=center
+
+[chatgpt]
+full_text=<span foreground="#10a37f" size="x-large"></span>
+min_width=34
+command=/usr/bin/chat-gpt >/dev/null
+border=#665934
+border_top=0
+border_left=1
+border_right=1
+border_bottom=0
+align=center
