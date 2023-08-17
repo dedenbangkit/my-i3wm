@@ -40,10 +40,10 @@ then
     REBOOT_REQUIRED="true"
     ACTION=$(xrescat i3-wm.program.reboot "/usr/bin/gnome-session-quit --reboot")
     LABEL_ICON=${icon:-$(xrescat i3xrocks.label.updates.reboot  )}
-    OUTPUT="<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">$LABEL_ICON</span> <span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">Reboot Required</span>"
+    OUTPUT="<span background=\"#223548\"><span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\"> $LABEL_ICON </span> <span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">Reboot Required </span></span>"
 else
     ACTION=$(xrescat i3xrocks.action.updates "update-manager")
-    OUTPUT="<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">$LABEL_ICON</span> <span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">$TOTAL_UPDATES/$SECURITY_UPDATES</span>"
+    OUTPUT="<span background=\"#223548\"><span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\"> $LABEL_ICON </span> <span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">$TOTAL_UPDATES/$SECURITY_UPDATES </span></span>"
 fi
 
 if [ "x${BUTTON}" == "x1" ]; then
