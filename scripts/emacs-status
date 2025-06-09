@@ -26,10 +26,10 @@ fi
 
 if [ "x${BUTTON}" == "x1" ]; then
     if ps -e -o args | grep -i 'emacs' | grep -q 'daemon'; then
-       ACTION=$(xrescat i3xrocks.action.checkemacs "/snap/bin/emacsclient -c")
+       ACTION=$(xrescat i3xrocks.action.checkemacs "/usr/bin/emacsclient -c")
        /usr/bin/i3-msg -q "exec --no-startup-id $ACTION"
     else
-       ACTION=$(xrescat i3xrocks.action.checkemacs "/snap/bin/emacs --daemon")
+       ACTION=$(xrescat i3xrocks.action.checkemacs "/usr/bin/emacs --daemon")
        /usr/bin/i3-msg -q "exec --no-startup-id $ACTION"
     fi
     emacs_status

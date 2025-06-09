@@ -1,0 +1,86 @@
+50_resize-mode
+1:## Resize // Enter Resize Mode // <> r ##
+
+70_bar
+6:## Modify // Toggle Bar // <> i ##
+
+55_session_keybindings
+5:## Session // Exit App // <><Shift> q ##
+9:## Session // Terminate App // <><Alt> q ##
+13:## Session // Reload i3 Config // <><Shift> c ##
+17:## Session // Refresh Session // <><Shift> r ##
+22:## Session // Restart i3 // <><Ctrl> r ##
+26:## Session // Logout // <><Shift> e ##
+31:## Session // Reboot // <><Shift> b ##
+36:## Session // Power Down // <><Shift> p ##
+41:## Session // Lock Screen // <> Escape ##
+46:## Session // Sleep // <><Shift> s ##
+
+35_i3-gaps
+5:## Resize // Window Gaps // <> + - ##
+11:## Resize // Big Window Gaps // <><Shift> + - ##
+
+60_config_keybindings
+5:## Modify // Settings // <> s ##
+10:## Modify // Display Settings // <> d ##
+15:## Modify // Wifi Settings // <> w ##
+20:## Modify // Bluetooth Settings // <> b ##
+25:## Launch // File Browser // <><Shift> n ##
+
+30_navigation
+5:## Navigate // Relative Parent // <> A ##/
+9:## Navigate // Relative Child // <> z ##/
+13:## Navigate // Relative Window // <> ↑ ↓ ← → ##
+17:## Navigate // Relative Window // <> k j h l ##
+27:## Navigate // Workspaces 1-10 // <> 0..9 ##
+38:## Navigate // Workspace 11 - 19 // <><Ctrl> 1..9 ##
+49:## Navigate // Next Workspace // <> Tab ##
+53:## Navigate // Next Workspace // <><Alt> → ##
+57:## Navigate // Next Workspace on Output // <><Ctrl> Tab ##
+61:## Navigate // Next Workspace on Output // <><Ctrl> l ##
+65:## Navigate // Previous Workspace // <><Shift> Tab ##
+69:## Navigate // Previous Workspace // <><Alt> ← ##
+73:## Navigate // Previous Workspace on Output // <><Ctrl><Shift> Tab ##
+77:## Navigate // Previous Workspace on Output // <><Ctrl> h ##
+81:## Navigate // Scratchpad // <><Ctrl> a ##
+
+40_i3-swap-focus
+1:## Navigate // Last Focused Window // <> . ##
+
+40_workspace-config
+5:## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
+11:## Modify // Window Position // <><Shift> k j h l ##
+21:## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
+31:## Modify // Containing Workspace // <><Ctrl><Shift> k j h l ##
+41:## Modify // Vertical Window Orientation // <> v ##
+45:## Modify // Horizontal Window Orientation // <> g ##
+49:## Modify // Toggle Window Orientation // <> Backspace ##
+53:## Modify // Window Fullscreen Toggle // <> f ##
+57:## Modify // Window Floating Toggle // <><Shift> f ##
+61:## Modify // Move to Scratchpad // <><Ctrl> m ##
+65:## Modify // Tile/Float Focus Toggle // <><Shift> t ##
+69:## Modify // Window Layout Mode // <> t ##
+73:## Modify // Move Window to Workspace 1 - 10 // <><Shift> 0..9 ##
+84:## Modify // Move Window to Workspace 11 - 19// <><Ctrl><Shift> 1..9 ##
+96:## Modify // Carry Window to Workspace 1 - 10// <><Alt> 0..9 ##
+107:## Modify // Carry Window to Workspace 11 - 19 // <><Alt><Ctrl> 1..9 ##
+
+82_rofication-ilia
+1:## Launch // Notification Viewer // <> n ##
+
+15_base_launchers
+5:## Launch // Terminal // <> Enter ##
+9:## Launch // Browser // <><Shift> Enter ##
+
+20_ilia
+4:## Launch // Application // <> Space ##
+9:## Launch // Command // <><Shift> Space ##
+14:## Launch // Keybinding Viewer // <><Shift> ? ##
+19:## Navigate // Window by Name // <><Ctrl> Space ##
+24:## Launch // File Search // <><Alt> Space ##
+29:## Launch // Look Selector // <><Alt> l ##
+
+40_next-workspace
+1:## Navigate // Next Free Workspace // <> ` ##
+5:## Modify // Move Window to Next Free Workspace // <><Shift> ` ##
+9:## Modify // Carry Window to Next Free Workspace // <><Alt> ` ##

@@ -6,17 +6,17 @@
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
-## Launch // Open Calendar // <> c ##/
-bindsym $mod+c exec --no-startup-id /usr/bin/gnome-calendar
+# Launch // Open Calendar // <> c ##/
+# bindsym $mod+c exec --no-startup-id /usr/bin/gnome-calendar
 
 ## Launch // Open Emacs // <> x ##/
-bindsym $mod+x exec --no-startup-id /snap/bin/emacsclient -c
+bindsym $mod+x exec --no-startup-id /usr/bin/emacsclient -c
 
-## Launch // Open Visidata // <> v ##/
-bindsym $mod+v exec --no-startup-id /home/dedenbangkit/Scripts/visi
+## Launch // Open Copyq // <> v ##/
+bindsym $mod+v exec --no-startup-id /usr/bin/copyq show
 
-## Launch // Open Ranger // <> n ##/
-bindsym $mod+n exec --no-startup-id /home/dedenbangkit/Scripts/rgr
+# Launch // Open Ranger // <> n ##/
+# bindsym $mod+n exec --no-startup-id /home/dedenbangkit/Scripts/rgr
 
-## Launch // Open Akvo Repos // <> a ##/
-bindsym $mod+a exec --no-startup-id gnome-terminal -e "/home/dedenbangkit/Scripts/z-akvo"
+# Launch // Open Akvo Repos // <> a ##/
+# bindsym $mod+a exec --no-startup-id gnome-terminal -e "/home/dedenbangkit/Scripts/z-akvo"

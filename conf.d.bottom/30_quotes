@@ -2,7 +2,7 @@
 #
 # Open next available workspace
 [random-quotes-widget]
-interval=600
+interval=1200
 min_width=10
 color=#d1c182
 font=JetBrains Mono Nerd Font Italic 10
